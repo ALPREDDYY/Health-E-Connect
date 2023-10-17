@@ -1,0 +1,86 @@
+a{
+    text-decoration: none;
+}
+
+.navbar-custom{
+    background-color:rgb(72, 75, 122);
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text,  .navbar-custom .nav-link{
+            color: white;
+            font-size: 25px;
+            
+}
+
+.name{
+    padding-top: 0.3125rem;
+    display: inline-block;
+    justify-content: right;
+    margin: 0 0 0 auto;
+    color: white;
+}
+
+.topsection{
+    display:flex;
+    border-bottom: 6px;
+    border-top: 1px;
+    padding-bottom: 4%;
+    border-color: black;
+}
+
+.web-name{
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.w3-sidenav w3-white w3-card-2{
+    background-color: black;
+}
+
+
+.user-selection{
+
+    font-family: 'Merriweather', serif;
+    margin: 5% 25%;
+    text-align: center;
+    border-color: #271212;
+    background-color: rgb(220, 237, 254);
+    border-style:solid ;
+    border-width: 1px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px 5px rgb(57, 55, 55);
+}
+
+.user-selection h3{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    padding-top: 5%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.manage{
+    display: inline-block;
+    margin: 3% 5%;
+}
+
+.manage h5{
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+.add-del{
+    display: inline-block;
+}
+
+.images{
+    border-radius: 10%;
+    width: 150px;
+}
