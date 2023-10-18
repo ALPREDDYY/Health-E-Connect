@@ -20,12 +20,13 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { UserSelectComponent } from './components/user-select/user-select.component';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,    
-    UserSelectComponent,
+    UserSelectComponent, PatientDashboardComponent,
   ],
   imports: [
     BrowserModule,
