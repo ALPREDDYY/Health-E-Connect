@@ -26,12 +26,14 @@ import { AddDoctorComponent } from './components/add-doctor/add-doctor.component
 import { AddProfileComponent } from './components/add-profile/add-profile.component';
 import { UserProfilesComponent } from './components/user-profiles/user-profiles.component';
 import { AddAdminComponent } from './components/add-admin/add-admin.component';
+import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
+import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,    
-    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent, AddProfileComponent, UserProfilesComponent, AddAdminComponent,
+    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent, AddProfileComponent, UserProfilesComponent, AddAdminComponent, DoctorLoginComponent, PatientLoginComponent,
   ],
   imports: [
     BrowserModule,
