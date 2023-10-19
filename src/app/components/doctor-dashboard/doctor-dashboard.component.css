@@ -1,0 +1,270 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-custom{
+    background-color:rgb(72, 75, 122);
+}
+
+.navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text,  .navbar-custom .nav-link{
+            color: white;
+            font-size: 25px;
+}
+
+a{
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.menu{
+    color: white;
+}
+
+.heading{
+    font-family: 'Merriweather', serif;
+    color: white;
+    margin-bottom: 0;
+    margin-left: 65%;
+    font-size: 25px;
+}
+
+.container{
+    margin: 5% 5%;
+
+    border-color: rgba(228, 228, 228, 0.9);
+    border-color: #271212;
+    background-color:white;
+    border-style:solid ;
+    border-width: 1px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px 5px rgb(57, 55, 55);
+
+}
+
+
+.Available-status{
+    position: absolute;
+    width: 268px;
+    height: 31px;
+    left: 1136px;
+    top: 158px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    background-color:lightgreen;
+    color: #000000;
+}
+
+
+
+.visit-patient{
+    color: rgba(0, 0, 0, 0.9);
+    align-content: center;
+    margin-top :3%;
+    margin-left: 40%;
+    font-weight: 400;
+    font-size: 20px;
+    width: 20%;
+    height: 70px;
+
+    border-radius: 6px;
+    border: 2px 2px 2px 2px;
+}
+
+
+.records{
+    display: flex;
+    margin-top: 10px;
+}
+    
+
+.toggle {
+    position : relative ;
+    display : inline-block;
+    width : 100px;
+    height : 52px;
+    background-color: red;
+    border-radius: 30px;
+    border: 2px solid gray;
+}
+
+       
+/* After slide changes */
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 1px;
+    left: 1px;
+    transition:  all 0.5s;
+}
+
+       
+/* Toggle text */
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+       
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+    left : 49px;
+}
+
+
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {
+    background-color: green;
+}
+
+       
+/* Checkbox vanished */
+.checkbox {
+    display : none;
+}
+
+
+.available-toggle-btn{
+    padding-right: 2%;
+    float: right;
+}
+
+
+.visit-patient:hover{
+    color: white;
+}
+
+.visit-patient:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+    color: black; 
+    background-color: #d1cece; 
+    border-color: #ccc; 
+  }
+
+
+button.visit-patient {
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color: white;
+}
+
+.previous-div{
+    text-align: center;
+}
+
+.previous{
+    text-align: center;
+    align-content: center;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: none;
+    color: rgba(264, 264, 264, 0.9);
+    background-color: #077070e2;
+}
+
+.previous:hover{
+    background-color: #088f8f;   
+}
+
+button.visit-patient:hover {
+      opacity: 0.8;
+}
+
+.details{
+    text-align: center;
+}
+
+.details p{
+    display: inline-block;
+    margin: 5% 15% 3% 15%;
+    font-family: 'Merriweather', serif;
+    font-size: large;
+}
+
+
+/* Navigation Bar */
+mat-toolbar {
+    background: darkslategray;
+    color: white;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: darkslategray;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    padding: 16px;
+
+    overflow: auto;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+.menu-button mat-icon {
+    margin-right: 8px;
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.active {
+    background-color: #f4eeee21;
+    color: #1976d2;
+}

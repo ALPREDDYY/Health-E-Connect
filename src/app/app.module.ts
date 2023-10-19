@@ -21,12 +21,13 @@ import { UserSelectComponent } from './components/user-select/user-select.compon
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
+import { DoctorDashboardComponent } from './componenets/doctor-dashboard/doctor-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,    
-    UserSelectComponent, PatientDashboardComponent,
+    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent,
   ],
   imports: [
     BrowserModule,
