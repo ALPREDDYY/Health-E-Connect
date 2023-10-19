@@ -1,1 +1,141 @@
-<p>add-admin works!</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin dashboard</title>  
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    
+    <style>
+        .w3-sidenav w3-white w3-card-2{
+            background-color: black !important;
+        }
+    </style>
+</head>
+<body>
+  <mat-toolbar class="mat-elevation-z8">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    <a >HealthEconnect</a>
+    <p class="heading">{{admin_details.adminName}}</p>
+</mat-toolbar>
+  
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      src="../../../assets/Patient.jpeg"
+    />
+
+    <h4 class="name">{{admin_details.adminName}}</h4>
+
+    <mat-divider></mat-divider>
+    
+    <button mat-button class="menu-button" routerLink="/admin-dashboard">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/view-doctors">
+      <mat-icon>medical_services</mat-icon>
+      <span>Manage Doctors</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/view-admins">
+      <mat-icon>admin_panel_settings</mat-icon>
+      <span>Manage Admins</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/statistics">
+      <mat-icon>insert_chart_outlined</mat-icon>
+      <span>Statistics</span>
+    </button>
+        
+    <mat-divider></mat-divider>
+    
+    <button mat-button class="menu-button" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>LogOut</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content  style = "background: url('../../../assets/profiles3.webp')">
+    <div class="admins-list">
+        
+      <h2 class="list-of-admins"><b>Add Admin</b></h2>
+      <br>
+      <br>
+      <h4 class="enter-all-fields"><b>Enter all the Fields</b></h4>
+
+      <form [formGroup]="adminForm"  class="center-form" (ngSubmit)="onSubmit()">
+          <div>
+            <label for="name" class="attr-name">Name:</label>
+            <input formControlName="name" type="text" id="name" name="name" required title="Please enter a username">
+            <div *ngIf="adminForm.controls['name'].invalid && adminForm.controls['name'].touched || adminForm.controls['name'].errors?.['pattern']" class="alert alert-danger">
+              Name should not be empty and does not contain numbers
+            </div>
+          </div>
+          <div>
+            <label for="phone" class="attr-name">Phone number:</label>
+            <input formControlName="ph_no" type="tel" id="phone" name="phone" required title="Please enter a phone number">
+            <div *ngIf="adminForm.controls['ph_no'].invalid && adminForm.controls['ph_no'].touched && adminForm.controls['ph_no'].errors?.['pattern']" class="alert alert-danger">
+              Phone number should be of length 10 and contain only numbers
+            </div>
+          </div>
+          <div>
+            <label for="dob" class="attr-name">Date of birth:</label>
+            <input formControlName="dob" type="date" id="dob" name="dob" required >
+            <div *ngIf="adminForm.controls['dob'].invalid && adminForm.controls['dob'].touched || adminForm.controls['dob'].errors?.['pattern']" class="alert alert-danger">
+              Date of birth should not be empty
+            </div>
+          </div>
+          <div>
+            <label for="gender" class="attr-name">Gender:</label>
+            <select formControlName="gender" id="gender" name="gender" required>
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <div *ngIf="adminForm.controls['gender'].invalid && adminForm.controls['gender'].touched || adminForm.controls['gender'].errors?.['pattern']" class="alert alert-danger">
+              Gender should not be empty
+            </div>
+          </div>
+          <div>
+            <label for="email" class="attr-name">Email:</label>
+            <input formControlName="email_id" type="email" id="email" name="email" required>
+            <div *ngIf="adminForm.controls['email_id'].invalid && adminForm.controls['email_id'].touched || adminForm.controls['email_id'].errors?.['pattern']" class="alert alert-danger">
+              Email ID should be of the form xyz@xyz.com
+            </div>
+          </div>
+          <div>
+            <label for="password" class="attr-name">Password:</label>
+            <input formControlName="password" style="margin-right: -10px;" type={{type}} id="password" name="password" required>
+            <span toggle="#password" class="field-icon toggle-password"><i class={{icon}} (click)="showpass()"></i></span>
+          </div>
+          <div *ngIf="adminForm.controls['password'].invalid && adminForm.controls['password'].touched || adminForm.controls['password'].errors?.['pattern']" class="alert alert-danger">
+            Password should not be empty
+          </div>
+          <div class="add-admin-btn" style="padding: 0; text-align: center;">
+          <button class="btn btn-primary btn-success add-admin" type="submit">Add Admin</button>
+          
+          </div>
+      </form>
+
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+</body>
+</html>

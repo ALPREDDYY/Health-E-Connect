@@ -1,0 +1,118 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Doctors_lst } from '../models/doctor-lst.model';
+import { Doctor } from '../models/doctor.model';
+import { Admin } from '../models/admin.model';
+import { Admins_lst } from '../models/admins-lst.model';
+import { environment } from 'src/environments/environment';
+
+
+const baseUrl = environment.baseUrl;
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AdminService {
+
+  constructor(private http: HttpClient) { }
+
+  getDoctorsLst(): Observable<Doctors_lst> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.get<Doctors_lst>(${baseUrl}/GetDoctorsList,{headers});
+  }
+
+  postDoctorDetails(doctorDetails: Doctor): Observable<string> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.post(${baseUrl}/PostDoctorDetails, doctorDetails, {responseType: 'text', headers});
+  }
+
+  postAdminDetails(adminDetails: Admin): Observable<string> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.post(${baseUrl}/PostAdminDetails, adminDetails, {responseType: 'text', headers});
+  }
+
+  getAdminsLst(): Observable<Admins_lst> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.get<Admins_lst>(${baseUrl}/GetAdminsList, {headers});
+  }
+
+  delDoctor(doctorId: number): Observable<string> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.delete(${baseUrl}/DeleteDoctor?doctorId=${doctorId},{responseType: 'text', headers})
+  }
+
+  delAdmin(adminId: number): Observable<string> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.delete(${baseUrl}/DeleteAdmin?adminId=${adminId},{responseType: 'text',headers})
+  }
+
+  getNoOfConsultations(doctorId: number, noOfDays: number): Observable<number> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.get<number>(${baseUrl}/NoOfConsultations?doctorId=${doctorId}&noOfDays=${noOfDays},{headers})
+  }
+
+  getPatientsCount(): Observable<Array<number>> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.get<Array<number>>(${baseUrl}/adminHomeStats, {headers});
+  }
+
+  getAdminDetails(admin_email_id: string): Observable<any> {
+    const token = JSON.parse(localStorage.getItem('admin_token')!).token;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': ${token},
+      'ngrok-skip-browser-warning':'google-chrome'
+    };
+    return this.http.get(${baseUrl}/admindetails?email_id=${admin_email_id},{headers});
+  }
+
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>add profile</title>  
+    <title>Admin dashboard</title>  
 
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <!-- Google fonts -->
@@ -20,73 +20,64 @@
         }
     </style>
 </head>
-<body>
+<body background="../../../assets/profiles3.webp">
 
-    <header class="w3-container w3-teal">
-    <div>
-        <button class="btn btn-primary navbar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">&#9776;</button>
-        <h2 class="web-name">Tele Consultation Platform</h2>
-        <div  class="heading">Mobile: 1234567890</div>
-    </div>
-    
-    
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <h3 style="width: auto; height:auto; margin-left: 15px; ">HealthEconnect</h3>
-        
-            <hr size="3px">
-            <a href="tryit.asp-filename=tryw3css_sidenav_over.html#" style=" margin-bottom: 15px;"> Home</a>
-            <br>		
-            <a href="tryit.asp-filename=tryw3css_sidenav_over.html#"  style=" margin-bottom: 15px;">Records</a>		
-            <br>
-            <a href="tryit.asp-filename=tryw3css_sidenav_over.html#"  style=" margin-bottom: 15px;">xxxx</a>		
-            <br>
-            <a href="tryit.asp-filename=tryw3css_sidenav_over.html#"  style=" margin-bottom: 15px;">xxxx</a>		
-            <br>
-            <a href="tryit.asp-filename=tryw3css_sidenav_over.html#"  style=" margin-bottom: 15px;">SignOut</a>		
-        </div>
-    </div>
-    
-    </header>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">HealthEconnect</a>
 
+    
+    </nav>
+    
     <div class="doctors-list">
+        <div style="text-align: center;">
+            <h1 class="list-of-admins"><b>Add a new profile</b></h1>
+        </div>
         
-        <h3 class="list-of-admins"><b>Add a new profile</b></h3>
         <br>
         <br>
-        <h6 class="enter-all-fields"><b>Enter all the Fields</b></h6>
-
-        <form class="center-form" (ngSubmit)="onSubmit()">
+        <form [formGroup]="patientForm" class="center-form" (ngSubmit)="onSubmit()">
             <div>
               <label for="name" class="attr-name">Name:</label>
-              <input type="text" id="name" name="name" [(ngModel)]="name" required>
+              <input formControlName="name" type="text" id="name" name="name"  required>
+                <div *ngIf="patientForm.controls['name'].invalid && patientForm.controls['name'].touched && patientForm.controls['name'].errors?.['pattern']" class="alert alert-danger">
+                    Name should not be empty and does not contain numbers
+                </div>
             </div>
             <div>
               <label for="dob" class="attr-name">Date of birth:</label>
-              <input type="date" id="dob" name="dob" [(ngModel)]="dob" required>
+              <input formControlName="dob" type="date" id="dob" name="dob"  required>
+                <div *ngIf="patientForm.controls['dob'].invalid && patientForm.controls['dob'].touched && patientForm.controls['dob'].errors?.['pattern']" class="alert alert-danger">
+                    Date of birth should math the pattern 'yyyy-mm-dd'
+                </div>
             </div>
             <div>
               <label for="gender" class="attr-name">Gender:</label>
-              <select id="gender" name="gender" [(ngModel)]="gender" required>
+              <select formControlName="gender" id="gender" name="gender" required>
                 <option value="">Select gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
               </select>
+              <div *ngIf="patientForm.controls['gender'].invalid && patientForm.controls['gender'].touched && patientForm.controls['gender'].errors?.['pattern']" class="alert alert-danger">
+                Select among Male/ Female/ other
+            </div>
             </div>
             <div>
               <label for="address" class="attr-name">Location:</label>
-              <textarea id="address" name="address" [(ngModel)]="location" required></textarea>
+              <textarea formControlName="location" id="address" name="address" required></textarea>
+              <div *ngIf="patientForm.controls['location'].invalid && patientForm.controls['location'].touched" class="alert alert-danger">
+                location should not be empty
+            </div>
             </div>
             <div>
                 <label for="dob" class="attr-name">Profile-pin:</label>
-                <input type="text" id="pin" name="pin" [(ngModel)]="pin" required>
+                <input formControlName="pin" type="text" id="pin" name="pin" required>
+                <div *ngIf="patientForm.controls['pin'].invalid && patientForm.controls['pin'].touched && patientForm.controls['pin'].errors?.['pattern']" class="alert alert-danger">
+                    Pin Code should be a six digit number
+                </div>
               </div>
             <div>
-               <button class="btn btn-primary add-admin" type="submit" onclick="location.href='/profiles'">Add Profile</button>
+               <button class="btn btn-primary add-admin" type="submit">Add Profile</button>
             </div>
         </form>
 
@@ -95,4 +86,3 @@
 
 </body>
 </html>
-

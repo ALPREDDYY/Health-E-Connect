@@ -28,12 +28,13 @@ import { UserProfilesComponent } from './components/user-profiles/user-profiles.
 import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
+import { ViewAdminsComponent } from './components/view-admins/view-admins.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,    
-    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent, AddProfileComponent, UserProfilesComponent, AddAdminComponent, DoctorLoginComponent, PatientLoginComponent,
+    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent, AddProfileComponent, UserProfilesComponent, AddAdminComponent, DoctorLoginComponent, PatientLoginComponent, ViewAdminsComponent,
   ],
   imports: [
     BrowserModule,
