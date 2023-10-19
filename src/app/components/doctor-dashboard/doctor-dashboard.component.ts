@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AvailabilityCheck } from 'src/app/models/availability-check.model';
-
+import { DoctorService } from 'src/app/services/doctor.service';
 import { PatientService } from 'src/app/services/patient.service';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -23,7 +23,7 @@ export class DoctorDashboardComponent implements OnInit {
   sidenav!: MatSidenav;
   
 
-  constructor(private router: Router,private patientservice:PatientService, private observer: BreakpointObserver, private loginservice: LoginserviceService) { 
+  constructor(private router: Router,private doctorService: DoctorService,private patientservice:PatientService, private observer: BreakpointObserver, private loginservice: LoginserviceService) { 
     this.available = true;
     this.getDoctorDetails();
     this.doctor_details = JSON.parse(localStorage.getItem("doctor_details")!);
@@ -62,8 +62,8 @@ export class DoctorDashboardComponent implements OnInit {
   }
   getDoctorDetails(){
     const username=JSON.parse(localStorage.getItem("doctor_token")!).doctor_email_id;
-    
-    ({
+    this.doctorService.getdoctordetails(username)
+    .subscribe({
       next:(res:any)=>{
         this.doctor_details=res;
         localStorage.setItem("doctor_details",JSON.stringify(this.doctor_details));
@@ -89,7 +89,17 @@ export class DoctorDashboardComponent implements OnInit {
     aval.status = this.available;
     
 
-   
+    this.doctorService.putDoctorStatus(aval)
+    .subscribe({
+      next: (data:number) => {
+        console.log(data);
+        console.log("fsfdfdfdfde");
+        if(data===1){
+          alert("Status changed successfully.");
+        }
+      },
+      error: (e) => console.error(e)
+    });
   }
 
   
@@ -110,7 +120,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   logout() {
     // console.log('component');
-    
+    this.loginservice.doctor_logout();
     this.router.navigate(['/Doctor']);
   }
 }
