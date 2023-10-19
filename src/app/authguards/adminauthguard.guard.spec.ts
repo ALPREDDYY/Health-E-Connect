@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { AdminauthguardGuard } from './adminauthguard.guard';
 
-describe('AdminauthguardGuard', () => {
+describe('AdminauthgaurdGuard', () => {
   let guard: AdminauthguardGuard;
 
   beforeEach(() => {

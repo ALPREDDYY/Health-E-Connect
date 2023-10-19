@@ -21,7 +21,7 @@ import { UserSelectComponent } from './components/user-select/user-select.compon
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
-import { DoctorDashboardComponent } from './componenets/doctor-dashboard/doctor-dashboard.component';
+import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 import { AddProfileComponent } from './components/add-profile/add-profile.component';
 import { UserProfilesComponent } from './components/user-profiles/user-profiles.component';
@@ -29,12 +29,25 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { ViewAdminsComponent } from './components/view-admins/view-admins.component';
+import { ViewDoctorsComponent } from './components/view-doctors/view-doctors.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLoginComponent,    
-    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent, AddProfileComponent, UserProfilesComponent, AddAdminComponent, DoctorLoginComponent, PatientLoginComponent, ViewAdminsComponent,
+    AddAdminComponent,
+    AddDoctorComponent
+    AddProfileComponent,
+    PatientDashboardComponent
+    AdminDashboardComponent,
+    AdminLoginComponent,
+    DoctorDashboardComponent,
+    DoctorLoginComponent,
+    PatientLoginComponent,
+    UserProfilesComponent,
+    UserSelectComponent,
+    ViewAdminsComponent,
+    ViewDoctorsComponent,
   ],
   imports: [
     BrowserModule,
