@@ -1,0 +1,209 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-custom{
+    background-color:rgb(72, 75, 122);
+}
+
+.navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text,  .navbar-custom .nav-link{
+            color: white;
+            font-size: 25px;
+}
+
+.heading-div{
+    padding-top: 2%;
+}
+
+
+.heading{
+    font-family: 'Merriweather', serif;
+    color: white;
+    margin-bottom: 0;
+    margin-left: 70%;
+    font-size: 25px;
+}
+
+.quote{
+    text-align: center;
+    color: white;
+}
+
+.quote h1{
+    color: black;
+    font-family: 'Merriweather', serif;
+}
+
+.quote h3{
+    color: black;
+    font-family: 'Merriweather', serif;
+}
+
+.quote{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meet-divs{
+    text-align: center;
+}
+      
+.appointment{
+    display: inline-block;
+    margin: 5% 10%;
+    width: 250px;
+    height: 100px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #F2F3F5;
+    border: 2px 10px 10px 2px rgba(57, 57, 57, 0.9);
+}
+
+      
+.appointment h3{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+      
+      
+.appointment button{
+    border-radius: 10px;
+}
+
+.appointment button:hover{
+    color: white;
+}
+      
+
+.follow-up{
+    display: inline-block;
+    margin: 5% 10%;
+    width: 250px;
+    height: 100px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #F2F3F5;
+    border: 2px 10px 10px 2px rgba(57, 57, 57, 0.9);
+}
+      
+      
+.follow-up h3{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.follow-up button{
+    border-radius: 10px;
+}
+
+.follow-up button:hover{
+    color: white;
+}
+
+
+.btn-color{
+    background-color: #088f8fe2;
+}
+.btn-color:hover {
+    background-color: #088f8f;
+}
+
+.meet-btn{
+    text-align: center;
+}
+
+.previous{
+    margin-top: 10%;
+    text-align: center;
+}
+
+.previous button{
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 1) ;
+    border-radius: 10px;
+    color: white; 
+    padding: 1% 1% 1% 1%; 
+    width: 20%;
+}
+
+
+mat-toolbar {
+    background: darkslategray;
+    color: white;
+  }
+  
+  mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: darkslategray;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+  
+    padding: 16px;
+  
+    overflow: auto;
+  }
+  
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+
+  .menu-button:mat-icon {
+    margin-right: 8px;
+  }
+  
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+  
+  .designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+  }
+  
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .active {
+    background-color: #f4eeee21;
+    color: #1976d2;
+}
