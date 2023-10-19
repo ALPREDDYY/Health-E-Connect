@@ -1,7 +1,7 @@
 # Health-E-Connect
 Software Engineering
 
-our team came up with the idea of developing a web application that treats patients online. The goal is to provide accessible, convenient, cost-effective, and efficient healthcare services. To fulfill this, our team plans to include the following features in our application
+Our shinobi team came up with the idea of developing a web application that treats patients online. The goal is to provide accessible, convenient, cost-effective, and efficient healthcare services. To fulfill this, our team plans to include the following features in our application
 • Book appointments with doctor
 • Easy interaction between doctor and patient through video/audio
 consultation.
