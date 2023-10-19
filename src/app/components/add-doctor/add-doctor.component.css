@@ -1,0 +1,221 @@
+.navbar-custom{
+    background-color:rgb(72, 75, 122);
+  
+      
+  }
+  
+  .navbar-custom .navbar-brand,
+          .navbar-custom .navbar-text,  .navbar-custom .nav-link{
+              color: white;
+              font-size: 25px;
+  }
+  
+  a{
+      padding-left: 2%;
+   
+  }
+  
+  .web-name{
+      display: inline-block;
+      margin-left: 5%;
+  }
+  
+  .heading{
+      font-family: 'Merriweather', serif;
+      color: white;
+      margin-bottom: 0;
+      margin-left: 60%;
+      font-size: 25px;
+  }
+      
+  
+  .w3-sidenav w3-white w3-card-2{
+      background-color: black;
+  }
+  
+  
+  .doctors-list{
+      border-color: #271212;
+      background-color:#F2F3F5;
+      border-style:solid ;
+      border-width: 1px;
+      border-radius: 30px;
+      box-shadow: 5px 5px 5px 5px rgb(57, 55, 55);
+      padding-left: 1%;
+      margin: 5% 25%;
+      color: black;
+  }
+  
+  .doctors-list h2{
+    font-family: 'Merriweather', serif;
+  }
+  
+  .doctors-list h4{
+    font-family: 'Merriweather', serif;
+  }
+  
+  .list-of-admins{
+      display: inline-block;
+      margin-left: 1%;
+      margin-bottom: 0;
+  }
+  
+  .field-icon {
+    float: right;
+    margin-right: 11px;
+    margin-top: -0%;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .toggle-password {
+    cursor: pointer;
+  }
+  
+  .toggle-password i {
+    color: black;
+    position: absolute;
+    right: 0;
+    top: 50%;
+  font-size:larger;
+  
+    transform: translateY(-50%);
+  }
+  
+  .toggle-password.active i {
+    color: #07c;
+  }
+  
+  
+  .enter-all-fields{
+      margin-left: 2%;
+  }
+  
+  .form-fields{
+      text-align: center;
+  }
+      
+  
+  .form{
+      text-align: left;
+      padding: 2% 1%;
+      display: inline-block;
+  }
+  
+  .attr-name:after {
+      content:" *";
+      color: red;
+  }
+  
+  
+  .inp{
+      margin: 4% 0%;
+  }
+  
+  .add-admin{
+      text-align: center;
+      margin-bottom: 2%;
+  }
+  
+  
+  .center-form div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      padding-right: 25%;
+  }
+  
+  
+  .center-form label {
+      flex: 1;
+      text-align: right;
+      margin-right: 10px;
+  }
+  
+  
+  .center-form input, .center-form select, .center-form textarea {
+      width: 15px;
+      flex: 1;
+  }
+  body{
+      height: 100vh;
+      width: 100vw;
+      font-family: 'Merriweather', serif;
+  
+     padding-bottom: 50%; 
+  }
+  
+  
+  /* Navigation Bar */
+  mat-toolbar {
+      background: darkslategray;
+      color: white;
+    }
+    
+    mat-sidenav {
+      margin: 16px;
+      width: 220px;
+      border-right: none;
+      background: darkslategray;
+      color: white;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    
+    .content {
+      height: calc(100vh - 130px);
+      border-radius: 10px;
+      margin: 16px;
+      margin-left: 32px;
+    
+      padding: 16px;
+    
+      overflow: auto;
+    }
+    
+    mat-sidenav-container {
+      height: calc(100vh - 65px);
+    }
+    
+    .menu-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 1rem;
+    }
+  
+    .menu-button:mat-icon {
+      margin-right: 8px;
+    }
+    
+    .avatar {
+      margin-top: 16px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    
+    .name {
+      margin-top: 8px;
+      font-weight: normal;
+    }
+    
+    .designation {
+      margin-top: 2px;
+      font-size: 0.7rem;
+      color: lightgrey;
+    }
+    
+    mat-divider {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  
+    .active {
+      background-color: #f4eeee21;
+      color: #1976d2;
+    }
