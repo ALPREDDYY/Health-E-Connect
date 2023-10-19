@@ -23,12 +23,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
 import { DoctorDashboardComponent } from './componenets/doctor-dashboard/doctor-dashboard.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
+import { AddProfileComponent } from './components/add-profile/add-profile.component';
+import { UserProfilesComponent } from './components/user-profiles/user-profiles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,    
-    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent,
+    UserSelectComponent, PatientDashboardComponent, DoctorDashboardComponent, AddDoctorComponent, AddProfileComponent, UserProfilesComponent,
   ],
   imports: [
     BrowserModule,
