@@ -1,5 +1,8 @@
 <!DOCTYPE html>   
 <html>  
+
+   
+ 
     <head>
         <meta charset="utf-8">
         <title>Student Movement Management</title>
@@ -30,8 +33,8 @@
         <form [formGroup]="myForm">
             <input formControlName="username" type="email" placeholder="Enter email" name="username"  [(ngModel)]="model.username" required/>    
             
-              <input formControlName="password" type={{type}} style="display: flex;" placeholder="Enter Password" name="password" [(ngModel)]="model.password" required/>  
-              <span toggle="#password" class="field-icon toggle-password"><i class={{icon}} (click)="showpas()"></i></span>
+              <input formControlName="password" type="text" style="display: flex;" placeholder="Enter Password" name="password" [(ngModel)]="model.password" required/>  
+              <span toggle="#password" class="field-icon toggle-password"><i class={{icon}} (click)="showpass()"></i></span>
 
 
               <div *ngIf="myForm.controls['username'].invalid && myForm.controls['username'].touched && myForm.controls['username'].errors?.['required']" class="alert alert-danger">

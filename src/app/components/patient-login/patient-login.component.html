@@ -1,11 +1,8 @@
 <!DOCTYPE html>   
 <html>  
-
-   
- 
     <head>
         <meta charset="utf-8">
-        <title>pat login</title>
+        <title>Patient Login</title>
       
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
         <!-- Google fonts -->
@@ -15,30 +12,45 @@
       
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-      
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
         <!-- Bootstrap Scripts -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
       </head>  
-<body >   
+<body background="../../../assets/profiles3.webp">   
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">HealthEconnect</a>
+  </nav>
+
    <div>
-    <header class="w3-container w3-teal header" id="title" style="text-align:center;">    
-      <h2 class="web-name">Patient Login</h2>
-    </header>
 
     <div class="form-container">
         <h2 class="form-title">Login</h2>
-        <form *ngIf="!otp_sent" (ngSubmit)="sendOTP()">
+        <form [formGroup]="myForm" *ngIf="!otp_sent" (ngSubmit)="sendOTP()">
           <label for="phone">Phone number:</label>
-          <input type="tel" id="phone" name="phone_number" placeholder="Enter phone number" [(ngModel)]="model.phone_number" [ngModelOptions]="{standalone: true}" required>
-          <button type="submit">Send OTP</button><br><br>
+          <input formControlName="mobile" type="tel" id="phone" name="phone_number" placeholder="Enter phone number" [(ngModel)]="model.phone_number" required>
+          
+          <div *ngIf="myForm.controls['mobile'].invalid && myForm.controls['mobile'].touched && myForm.controls['mobile'].errors?.['pattern']" class="alert alert-danger">
+            Mobile Number should be of length 10 and should contain only digits from '0-9'
+          </div>
+          
+          <div class="submit">
+            <button type="submit">Send OTP</button><br><br>
+          </div>
         </form>
 
-        <form *ngIf="otp_sent"  (ngSubmit)="verifyOTP()">
+        <form [formGroup]="otpForm" *ngIf="otp_sent"  (ngSubmit)="verifyOTP()">
           <label for="otp">OTP:</label>
-          <input type="text" id="otp" name="otp" placeholder="Enter OTP" [(ngModel)]="model.otp" [ngModelOptions]="{standalone: true}" required>
-          
-          <button type="submit">Verify OTP  </button>
+          <input formControlName="otp" type="text" id="otp" name="otp" placeholder="Enter OTP" [(ngModel)]="model.otp" required>
+          <div *ngIf="otpForm.controls['otp'].invalid && otpForm.controls['otp'].touched && otpForm.controls['otp'].errors?.['pattern']" class="alert alert-danger">
+            OTP should be of length 6 and should contain only digits from '0-9'
+          </div>
+          <div class="submit">
+            <button type="submit">Verify OTP  </button>
+          </div>
         </form>
       </div>
    </div>

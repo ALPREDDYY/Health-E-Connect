@@ -13,7 +13,7 @@ export class DoctorauthguardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const token=localStorage.getItem("doctor_token");
       //console.log(token);
-       if (token) {
+       if (token&& token!="undefined") {
          return true;
        }
        alert("your session has expired");

@@ -74,6 +74,16 @@ export class AddDoctorComponent implements OnInit {
       });
   }
 
+  showpass(){
+    if (this.type=="password"){
+      this.type="text";
+      this.icon="fa fa-fw fa-eye-slash"
+    }
+    else{
+    this.type="password";
+    this.icon="fa fa-fw fa-eye"
+    }
+  }
 
   onSubmit(): void {
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Doctors_lst } from '../models/doctor-lst.model';
-import { Doctor } from '../models/doctor.model';
+import { Doctors_lst } from '../models/doctors-lst.model';
+import { Doctor } from '../models/doctor.models';
 import { Admin } from '../models/admin.model';
 import { Admins_lst } from '../models/admins-lst.model';
 import { environment } from 'src/environments/environment';
@@ -22,10 +22,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.get<Doctors_lst>(${baseUrl}/GetDoctorsList,{headers});
+    return this.http.get<Doctors_lst>(`${baseUrl}/GetDoctorsList`,{headers});
   }
 
   postDoctorDetails(doctorDetails: Doctor): Observable<string> {
@@ -33,10 +33,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.post(${baseUrl}/PostDoctorDetails, doctorDetails, {responseType: 'text', headers});
+    return this.http.post(`${baseUrl}/PostDoctorDetails`, doctorDetails, {responseType: 'text', headers});
   }
 
   postAdminDetails(adminDetails: Admin): Observable<string> {
@@ -44,10 +44,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.post(${baseUrl}/PostAdminDetails, adminDetails, {responseType: 'text', headers});
+    return this.http.post(`${baseUrl}/PostAdminDetails`, adminDetails, {responseType: 'text', headers});
   }
 
   getAdminsLst(): Observable<Admins_lst> {
@@ -55,10 +55,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.get<Admins_lst>(${baseUrl}/GetAdminsList, {headers});
+    return this.http.get<Admins_lst>(`${baseUrl}/GetAdminsList`, {headers});
   }
 
   delDoctor(doctorId: number): Observable<string> {
@@ -66,10 +66,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.delete(${baseUrl}/DeleteDoctor?doctorId=${doctorId},{responseType: 'text', headers})
+    return this.http.delete(`${baseUrl}/DeleteDoctor?doctorId=${doctorId}`,{responseType: 'text', headers})
   }
 
   delAdmin(adminId: number): Observable<string> {
@@ -77,10 +77,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.delete(${baseUrl}/DeleteAdmin?adminId=${adminId},{responseType: 'text',headers})
+    return this.http.delete(`${baseUrl}/DeleteAdmin?adminId=${adminId}`,{responseType: 'text',headers})
   }
 
   getNoOfConsultations(doctorId: number, noOfDays: number): Observable<number> {
@@ -88,20 +88,20 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.get<number>(${baseUrl}/NoOfConsultations?doctorId=${doctorId}&noOfDays=${noOfDays},{headers})
+    return this.http.get<number>(`${baseUrl}/NoOfConsultations?doctorId=${doctorId}&noOfDays=${noOfDays}`,{headers})
   }
 
   getPatientsCount(): Observable<Array<number>> {
     const token = JSON.parse(localStorage.getItem('admin_token')!).token;
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.get<Array<number>>(${baseUrl}/adminHomeStats, {headers});
+    return this.http.get<Array<number>>(`${baseUrl}/adminHomeStats`, {headers});
   }
 
   getAdminDetails(admin_email_id: string): Observable<any> {
@@ -109,10 +109,10 @@ export class AdminService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.get(${baseUrl}/admindetails?email_id=${admin_email_id},{headers});
-  }
+    return this.http.get(`${baseUrl}/admindetails?email_id=${admin_email_id}`,{headers});
+  }
 
 }

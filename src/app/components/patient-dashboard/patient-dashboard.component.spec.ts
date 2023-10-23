@@ -6,10 +6,12 @@ describe('PatientDashboardComponent', () => {
   let component: PatientDashboardComponent;
   let fixture: ComponentFixture<PatientDashboardComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [PatientDashboardComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ PatientDashboardComponent ]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(PatientDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -142,6 +142,6 @@ showpass(){
     // console.log('component');
     this.loginservice.patient_logout();
     this.router.navigate(['/Patient']);
-  }
+  }
 
 }

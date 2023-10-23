@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PatientService } from 'src/app/services/patient.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
+import { delay, filter } from 'rxjs/operators';
+import { NavigationEnd, Router } from '@angular/router';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { LoginserviceService } from 'src/app/services/loginservice.service';
 
 @Component({
   selector: 'app-patient-dashboard',
   templateUrl: './patient-dashboard.component.html',
   styleUrls: ['./patient-dashboard.component.css']
 })
-export class PatientDashboardComponent {
-  previous_appointments=true
+export class PatientDashboardComponent implements OnInit {
+  previous_appointments:boolean;
   patient_id: number = -1;
   patient_details:any;
+
   sidenav!: MatSidenav;
 
   constructor(private router: Router,private patientservice:PatientService, private observer: BreakpointObserver, private loginservice: LoginserviceService) { 
@@ -81,4 +89,3 @@ export class PatientDashboardComponent {
   }
 
 }
- 

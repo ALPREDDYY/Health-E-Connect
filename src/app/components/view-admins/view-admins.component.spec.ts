@@ -6,10 +6,12 @@ describe('ViewAdminsComponent', () => {
   let component: ViewAdminsComponent;
   let fixture: ComponentFixture<ViewAdminsComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ViewAdminsComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ViewAdminsComponent ]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(ViewAdminsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

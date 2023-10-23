@@ -100,8 +100,7 @@ export class ViewAdminsComponent implements OnInit {
         error: (e) => console.error(e)
       });
 
-    }
-  }
+    }
+  }
 
 }
-

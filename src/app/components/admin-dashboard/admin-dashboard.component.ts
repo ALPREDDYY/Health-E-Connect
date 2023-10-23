@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
@@ -75,7 +76,7 @@ export class AdminDashboardComponent {
 
   logout() {
     this.loginservice.admin_logout();
-    this.router.navigate(['/Admin']);
+    this.router.navigate(['/admin']);
   }
 
 }

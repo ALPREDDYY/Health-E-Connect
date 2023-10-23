@@ -1,1 +1,120 @@
-<p>view-doctors works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin dashboard</title>  
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Bootstrap Scripts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+    <style>
+        .w3-sidenav w3-white w3-card-2{
+            background-color: black !important;
+        }
+    </style>
+</head>
+<body background="../../../assets/profiles1.webp">
+
+    <mat-toolbar class="mat-elevation-z8">
+        <button
+          mat-icon-button
+          *ngIf="sidenav.mode === 'over'"
+          (click)="sidenav.toggle()"
+          [ngClass]="{'active2': sidenav.opened}"
+        >
+          <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+          <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+        </button>
+        <a >HealthEconnect</a>
+        <p class="heading">{{admin_details.adminName}}</p>
+    </mat-toolbar>
+      
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img
+          class="avatar mat-elevation-z8"
+          src="../../../assets/Patient.jpeg"
+        />
+    
+        <h4 class="name">{{admin_details.adminName}}</h4>
+    
+        <mat-divider></mat-divider>
+        
+        <button mat-button class="menu-button" routerLink="/admin-dashboard">
+          <mat-icon>dashboard</mat-icon>
+          <span>Dashboard</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/view-doctors" routerLinkActive="active">
+          <mat-icon>medical_services</mat-icon>
+          <span>Manage Doctors</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/view-admins">
+          <mat-icon>admin_panel_settings</mat-icon>
+          <span>Manage Admins</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/statistics">
+          <mat-icon>insert_chart_outlined</mat-icon>
+          <span>Statistics</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/Admin">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>LogOut</span>
+        </button>
+
+      </mat-sidenav>
+      <mat-sidenav-content  style = "background: url('../../../assets/profiles3.webp')">
+        <div class="doctors-list">
+
+            <h2 class="list-of-doctors">List of Doctors</h2>
+    
+            <div class="add-doctor">
+                <h2>Add Doctor</h2>
+                <a href="/add-doctor"><img src="../../../assets/plus.jpg" alt="Admin" class="plus"></a>
+            </div>
+            
+            <div class="manage-doctor" *ngFor="let doct of doctorsLst; let i = index">
+                <div class="doctor-details">
+                    <div class="name">
+                        <h4 class="name"> <b>Dr. {{doct.name}}</b> </h4>
+                    </div>
+                    <a role="button" (click)="deleteDoctor(doct.doctor_id)"><img src="../../../assets/trash-can.jpg" alt="Admin" class="delete-icon"></a>
+                    <br>
+                    <div class="sub-details">
+                        <div class="h6-div"><h4 class="h6-details">{{doct.qualification}}, {{doct.department_name}}</h4></div>
+                        
+                        <div class="h6-div"><h4 class="h6-details">{{doct.clinic_address}}</h4></div>
+                        <div class="h6-div"><h4 class="h6-details">Ph.No: {{doct.phone_number}}</h4></div>
+                        <div class="h6-div"><h4 class="h6-details">{{getYearsSince(doct.doctor_start_date)}} Years Of Experience.</h4></div>
+                        <br>
+                    </div>
+                    <br>
+    
+                    <div class="num-consultations">
+                        <h4 class="num-consult-text"> <b>Number of Consultations from the past</b> </h4>
+                        <input class="form-control days-input" type="number" placeholder="Number of Days" min="1" [(ngModel)]= "no_of_days"> <!--consults.get(doct.doctor_id)[0] -->
+                        <button type="submit" class="btn btn-primary go" (click)="retriveNoOfConsultations(doct.doctor_id)">Go</button>
+                        <div class="consultations-count" *ngIf= "checkIf(doct.doctor_id);"> <!-- *ngIf= "doct.doctor_id === doctor_id"> -->
+                            <h6 class="num-consult"><b>{{no_of_consults}} consultations</b></h6>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</body>
+</html> 

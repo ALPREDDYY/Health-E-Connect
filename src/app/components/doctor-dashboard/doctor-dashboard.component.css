@@ -122,12 +122,6 @@ p {
     left : 49px;
 }
 
-
-/* Checkbox checked toggle label bg color */
-.checkbox:checked + .toggle {
-    background-color: green;
-}
-
        
 /* Checkbox vanished */
 .checkbox {

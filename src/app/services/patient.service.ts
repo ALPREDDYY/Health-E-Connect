@@ -18,12 +18,12 @@ export class PatientService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
  
     console.log("scscscs");
-    return this.http.get(${baseUrl}/profiles/+phone_number,{headers});
+    return this.http.get(`${baseUrl}/profiles/`+phone_number,{headers});
     // return "Hello";
   }
   getuserprofilepass(patient_id : number): Observable<any>{
@@ -31,10 +31,10 @@ export class PatientService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': ${token},
+      'Authorization': `${token}`,
       'ngrok-skip-browser-warning':'google-chrome'
     };
-    return this.http.get(${baseUrl}/profiles/pin?patient_id=${patient_id},{headers});
+    return this.http.get(`${baseUrl}/profiles/pin?patient_id=${patient_id}`,{headers});
 
   }
 

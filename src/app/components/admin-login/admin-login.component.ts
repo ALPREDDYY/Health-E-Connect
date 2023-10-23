@@ -47,6 +47,7 @@ export class AdminLoginComponent implements OnInit {
       this.loginservice.getAdminData(user,password)
         .subscribe((response: any) => {
           console.log(response);
+          console.log("fsfsf");
           if (response.token == "not") {
             alert('username and password doesnt match!');
           } else {

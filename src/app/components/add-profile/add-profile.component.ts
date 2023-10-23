@@ -68,7 +68,7 @@ export class AddProfileComponent implements OnInit {
         },
         error:(e) => console.error(e)
       });
-    }
-  }
+    }
+  }
 
 }

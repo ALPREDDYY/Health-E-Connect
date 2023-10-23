@@ -16,33 +16,33 @@ import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-import { UserSelectComponent } from './components/user-select/user-select.component';
-import { environment } from 'src/environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
-import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
+import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 import { AddProfileComponent } from './components/add-profile/add-profile.component';
-import { UserProfilesComponent } from './components/user-profiles/user-profiles.component';
-import { AddAdminComponent } from './components/add-admin/add-admin.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
+import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
+import { UserProfilesComponent } from './components/user-profiles/user-profiles.component';
+import { UserSelectComponent } from './components/user-select/user-select.component';
 import { ViewAdminsComponent } from './components/view-admins/view-admins.component';
 import { ViewDoctorsComponent } from './components/view-doctors/view-doctors.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddAdminComponent,
-    AddDoctorComponent
+    AddDoctorComponent,
     AddProfileComponent,
-    PatientDashboardComponent
     AdminDashboardComponent,
     AdminLoginComponent,
     DoctorDashboardComponent,
     DoctorLoginComponent,
+    PatientDashboardComponent,
     PatientLoginComponent,
     UserProfilesComponent,
     UserSelectComponent,

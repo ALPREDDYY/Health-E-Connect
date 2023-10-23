@@ -1,0 +1,112 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Merriweather', serif;
+
+   padding-bottom: 50%;
+}
+
+.navbar-custom{
+    background-color:rgb(72, 75, 122);
+}
+
+.navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text,  .navbar-custom .nav-link{
+            color: white;
+            font-size: 25px;
+}
+
+a{
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.name{
+    font-size: 25px;
+    font-family: 'Merriweather', serif;
+    color: white;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 3%;
+    margin-bottom: 0;
+}
+
+.w3-sidenav w3-white w3-card-2{
+    background-color: black;
+}
+
+
+.doctors-list{
+    color: black;
+    border-color: rgba(228, 228, 228, 0.9);
+    background-color: #F2F3F5;
+    border-color: #271212;
+    border-style:solid ;
+    border-width: 1px;
+    border-radius: 30px;
+    box-shadow: 15px 15px 15px 15px rgb(57, 55, 55);
+    margin: 5% 25%;
+}
+
+.list-of-admins{
+    font-family: 'Merriweather', serif;
+    display: inline-block;
+    margin-left: 1%;
+    margin-top: 1%;
+    text-align: center;
+}
+
+
+.enter-all-fields{
+    margin-left: 2%;
+}
+
+.form-fields{
+    text-align: center;
+}
+    
+
+.form{
+    text-align: left;
+    padding: 2% 1%;
+    display: inline-block;
+}
+
+.attr-name:after {
+    content:" *";
+    color: red;
+}
+
+
+.inp{
+    margin: 4% 0%;
+}
+
+.add-admin{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+
+.center-form div{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-right: 25%;
+}
+
+
+.center-form label {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+
+.center-form input, .center-form select, .center-form textarea{
+    width: 15px;
+    flex: 1;
+}
+

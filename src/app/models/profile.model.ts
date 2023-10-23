@@ -5,5 +5,5 @@ export interface Profile {
     gender: string;
     phone_number: string;
     location: string;
-    pin: string;
+    pin: string;
 }

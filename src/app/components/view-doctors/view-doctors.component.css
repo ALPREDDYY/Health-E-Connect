@@ -1,0 +1,238 @@
+
+.topsection{
+    display:flex;
+    border-bottom: 6px;
+    border-top: 1px;
+    padding-bottom: 4%;
+    border-color: black;
+}
+
+
+
+.web-name{
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.heading{
+    font-family: 'Merriweather', serif;
+    color: white;
+    margin-bottom: 0;
+    margin-left: 60%;
+    font-size: 25px;
+}
+    
+
+.w3-sidenav w3-white w3-card-2{
+    background-color: black;
+}
+
+.doctors-list{
+    border-color: #271212;
+    background-color:#F2F3F5;
+    border-style:solid ;
+    border-width: 1px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px 5px rgb(57, 55, 55);
+    margin: 5% 15%;
+    margin: 5% 5%;
+    font-size: 0px;
+    color: black;
+
+}
+
+.list-of-doctors{
+    margin-top: 1%;
+    display: inline-block;
+    margin-left: 1%;
+}
+
+
+.add-doctor{
+    margin-top: 1%;
+    display: inline-block;
+    float: right;
+}
+
+.add-doctor h2{
+    display: inline-block;
+    margin-left: 65%;
+}
+
+.navbar-custom{
+    background-color:rgb(72, 75, 122);
+    
+}
+
+.navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text,  .navbar-custom .nav-link{
+            color: white;
+            font-size: 25px;
+}
+
+a{
+    padding-left: 2%;
+ 
+}
+
+.plus{
+    display: inline-block;
+    margin-left: 0.5%;
+    margin-bottom: 2%;
+    border-radius: 50%;
+    width: 3%;
+}
+
+.manage-doctor{
+    background-color: #DED8F5;
+    margin: 5% 5%;
+    font-size: 0px;
+    border-radius: 15px;
+    padding: 2%;
+}
+
+
+.name{
+    display: inline-block;
+}
+
+.sub-details{
+    width: 100%;
+}
+
+.h6-div{
+    display: inline-block;
+    margin: 1% 8%;
+}
+
+.h6-details{
+    display: inline-block;
+    text-align: center;
+    width: 280px;
+}
+
+.delete-doctor{
+    display: inline-block;
+}
+
+
+.delete-icon{
+    display: inline-block;
+    text-align: right;
+    float: right;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 50%;
+    width: 3%;
+}
+
+.num-consultations{
+    margin-left: 8%;
+}
+
+.num-consultations div{
+    display: inline;
+}
+
+.num-consult-text{
+    display: inline-block;
+}
+
+.days-input{
+    display: inline-block;
+    margin: 0% 0% 0% 3%;
+    width: 20%;
+    height: 10%;
+}
+
+.num-consult{
+    display: inline-block;
+}
+
+.go{
+    margin: 0% 2% 1%;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Merriweather', serif;
+
+   padding-bottom: 50%;
+   
+}
+
+
+
+  
+/* Navigation Bar */
+mat-toolbar {
+    background: darkslategray;
+    color: white;
+  }
+  
+  mat-sidenav {
+    margin: 16px;
+    width: 220px;
+    border-right: none;
+    background: darkslategray;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .content {
+    height: calc(100vh - 130px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+  
+    padding: 16px;
+  
+    overflow: auto;
+  }
+  
+  mat-sidenav-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+
+  .menu-button:mat-icon {
+    margin-right: 8px;
+  }
+  
+  .avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    margin-top: 8px;
+    font-weight: normal;
+  }
+  
+  .designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+  }
+  
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .active {
+    background-color: #f4eeee21;
+    color: #1976d2;
+}

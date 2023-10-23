@@ -1,7 +1,7 @@
-import { AdminsLst } from './admins-lst.model';
+import { Admins_lst } from "./admins-lst.model";
 
-describe('AdminsLst', () => {
+describe('Admins_lst', () => {
   it('should create an instance', () => {
-    expect(new AdminsLst()).toBeTruthy();
+    expect(new Admins_lst()).toBeTruthy();
   });
 });
