@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tele-consultation-platform'`, () => {
+  it(`should have as title 'hec'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tele-consultation-platform');
+    expect(app.title).toEqual('hec');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('tele-consultation-platform app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('hec app is running!');
   });
 });
