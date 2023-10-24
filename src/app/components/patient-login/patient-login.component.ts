@@ -41,13 +41,15 @@ export class PatientLoginComponent implements OnInit {
         next: (response:any) => {
           if (response == 1) {
             alert('OTP sent successfully.');
+            // Move it here to avoid the bug
+            this.otp_sent = true; 
           } 
           else {
             alert('OTP sending failed!');
           }
         },
       });
-      this.otp_sent=true;
+      
     }
 
     
