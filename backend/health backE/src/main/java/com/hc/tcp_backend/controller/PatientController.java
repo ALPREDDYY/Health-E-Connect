@@ -59,8 +59,9 @@ public class PatientController {
     @GetMapping("profiles/pin")
     public ResponseEntity<PatientDetails> pass(@RequestParam int patient_id){
         PatientDetails ud= patient_service.userprofilepass(patient_id);
-        System.out.println(ud);
+        
         if (ud!=null){
+            System.out.println(ud);
             return new ResponseEntity<>(ud,HttpStatus.OK);
         }
         return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
