@@ -33,7 +33,7 @@
         <form [formGroup]="myForm">
             <input formControlName="username" type="email" placeholder="Enter email" name="username"  [(ngModel)]="model.username" required/>    
             
-              <input formControlName="password" type="text" style="display: flex;" placeholder="Enter Password" name="password" [(ngModel)]="model.password" required/>  
+              <input formControlName="password" type="{{type}}" style="display: flex;" placeholder="Enter Password" name="password" [(ngModel)]="model.password" required/>  
               <span toggle="#password" class="field-icon toggle-password"><i class={{icon}} (click)="showpass()"></i></span>
 
 
