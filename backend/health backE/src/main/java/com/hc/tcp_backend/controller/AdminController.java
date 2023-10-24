@@ -93,7 +93,9 @@ public class AdminController {
             if(flag==1)
             {
                 Admin admin = new Admin(admindetails.getName(), admindetails.getGender(),admindetails.getDob(), admindetails.getPhone_number());
+                admin = admin_service.save(admin);
                 AdminLogin adminLogin = new AdminLogin(admindetails.getEmail_id(),admindetails.getPassword(),admin.getAdminId(), true);
+                adminLogin= admin_login_service.save(adminLogin);
                 ans = "Success";
             }
             else
