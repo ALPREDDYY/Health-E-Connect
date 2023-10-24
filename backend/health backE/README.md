@@ -1,1 +1,0 @@
-# Tele consulting Platform
