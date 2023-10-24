@@ -115,7 +115,7 @@ public class AdminController {
             List<Admin> admins = admin_service.getAdminList();
 
 
-            for (int i=0 ; i<adminDetails.size() ; i++)
+            for (int i=0 ; i<admins.size() ; i++)
             {
                 Admin singleAdmin = admins.get(i);
                 AdminLogin adminLoginDetails = admin_login_service.findById(singleAdmin.getAdminId());
@@ -139,10 +139,6 @@ public class AdminController {
 
             }
 
-            for(int i=0 ; i<adminDetails.size() ; i++)
-            {
-                System.out.println(adminDetails.get(i).toString());
-            }
             System.out.println("admindetails");
 
             return new ResponseEntity<>(adminDetails, HttpStatus.OK);
