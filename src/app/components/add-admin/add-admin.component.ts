@@ -126,9 +126,8 @@ showpass(){
 
   logout() {
     this.loginservice.admin_logout();
-    console.log("129");
-    this.router.navigate(['/admin']);
-    console.log("131");
+    this.router.navigate(['/Admin']);
+
   }
 
 }
