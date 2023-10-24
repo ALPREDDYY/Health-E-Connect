@@ -76,7 +76,7 @@ export class AdminDashboardComponent {
 
   logout() {
     this.loginservice.admin_logout();
-    this.router.navigate(['/admin']);
+    this.router.navigate(['/Admin']);
   }
 
 }
