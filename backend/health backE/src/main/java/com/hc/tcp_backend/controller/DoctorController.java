@@ -154,10 +154,12 @@ public class DoctorController {
     		    String password = "qwertyjhgsaADGNN";
 
 				DoctorLogin docLogin = doctor_login_service.findById(id);
-				Doctor doctor = new Doctor(id,name,dob,gender,email_id,doctor_start_date,
+				if(docLogin.getIsDoctorActive()==true){
+					Doctor doctor = new Doctor(id,name,dob,gender,email_id,doctor_start_date,
 							qualification,department_name, phone_number, clinic_address, password);
 
 					doctors.add(doctor);
+				}
 
     		}
     		
