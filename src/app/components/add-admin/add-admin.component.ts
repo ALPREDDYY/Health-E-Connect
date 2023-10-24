@@ -35,7 +35,7 @@ export class AddAdminComponent implements OnInit {
       dob: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
       ph_no: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
-      email_id: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z._%+-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,}$')]),
+      email_id: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]),
       password: new FormControl('',[Validators.required])
     });
 
