@@ -42,13 +42,17 @@ public class DoctorController {
     public ResponseEntity<Integer> change_status(@RequestBody DoctorAvailable doctor) {
         try {
             String ans = "";
-			System.out.println("succ");
-            doctorDetailsRepository.updatedoctordetails(doctor.getDoctorId(), doctor.isStatus());
+            int updatedRows = doctorDetailsRepository.updatedoctordetails(doctor.getDoctorId(), doctor.isStatus());
+            if (updatedRows > 0) {
             ans = "Success";
-			System.out.println(ans);
+            System.out.println(ans);
             return new ResponseEntity<>(1, HttpStatus.OK);
+        } else {
+            ans = "Failed to update doctor status";
+            System.out.println(ans);
+            return new ResponseEntity<>(0, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         } catch (Exception e) {
-			System.out.println("endddddddddddddddddddddddnnnnnnnnnnnnnnnnnnnnnnnnnn");
             return new ResponseEntity<>(0, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
