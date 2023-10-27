@@ -8,6 +8,6 @@ consultation.
 • Prescription writing and generation
 • Storing previous appointments and prescription records.
 • Visualizing the number of consultations that happened in a period of time in various medical departments.
-This application makes it easier for patients to contact doctors instantly and doctors can check patient’s previous appointments and health records online which will be never lost. Backend files are present in HEC- backend repository.
+This application makes it easier for patients to contact doctors instantly and doctors can check patient’s previous appointments and health records online which will be never lost. 
 We hosted our demo website in Microsoft Azure.
 Demo link: http://20.127.155.211/home
