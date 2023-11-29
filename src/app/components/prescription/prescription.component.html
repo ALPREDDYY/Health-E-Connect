@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin dashboard</title>  
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <!-- Bootstrap Scripts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    
+    <style>
+        .w3-sidenav w3-white w3-card-2{
+            background-color: black !important;
+        }
+    </style>
+</head>
+<body style ="background: url('../../../assets/profiles3.webp')">
+
+    <mat-toolbar class="mat-elevation-z8">
+        <a >HealthEconnect</a>
+        <p class="heading">{{doctor_details.doctorName}}</p>
+    </mat-toolbar>
+
+    <div class="page-title">
+        <h2 class="page-title-h2">PRESCRIPTION</h2>
+        <h4>Write a Prescription for {{patient_details.patientName}}</h4>
+    </div>
+
+    <div class="form">
+        <form [formGroup]="medicineForm" (ngSubmit)="addMedicine()" class="add-prescription">
+            <h4>Add a new Medicine</h4>
+            <!-- <hr style="border-style:solid ;"> -->
+            <div >
+                <div>
+                    <label for="name">Medicine Name:</label>
+                    <br>
+                    <input formControlName="name" type="text" id="name" name="name" required>
+                    <div *ngIf="medicineForm.controls['name'].invalid && medicineForm.controls['name'].touched" class="alert alert-danger">
+                        Medicine name Should not be empty
+                    </div>
+                </div>
+                <div>
+                    <label for="power">Medicine Power:</label>
+                    <br>
+                    <input formControlName="power" type="number" id="phone" name="power" required>
+                    <div *ngIf="medicineForm.controls['power'].invalid && medicineForm.controls['power'].touched && medicineForm.controls['power'].errors?.['pattern']" class="alert alert-danger">
+                        Medicine Power should be a text
+                    </div>
+                </div>
+                <div>
+                    <label for="dosage">Medicine Dosage:</label>
+                    <br>
+                    <input formControlName="dosage" type="text" id="dosage" name="dosage" required>
+                    <div *ngIf="medicineForm.controls['dosage'].invalid && medicineForm.controls['dosage'].touched" class="alert alert-danger">
+                        Dosage should not be empty
+                    </div>
+                </div>
+                <div>
+                    <label for="dob">Medicine Duration:</label>
+                    <br>
+                    <input formControlName="duration" type="number" placeholder="No.of days" id="dob" name="dob" required>
+                    <div *ngIf="medicineForm.controls['duration'].invalid && medicineForm.controls['duration'].touched && medicineForm.controls['duration'].errors?.['pattern']" class="alert alert-danger">
+                        Duration should a positive number
+                    </div>
+                </div>
+                <div class="submit">
+                    <button class="btn btn-success add-admin" type="submit" >Add Medicine</button>
+                </div>
+            </div>
+        </form>
+
+        <form [formGroup]="patientForm" (ngSubmit)="addPatientDetails()" class="patient-details">
+            <div >
+                <div>
+                    <label for="dob" class="">Patient Weight:</label>
+                    <br>
+                    <input formControlName="weight" type="text" id="dob" name="dob" required>
+                    <div *ngIf="patientForm.controls['weight'].invalid && patientForm.controls['weight'].touched && patientForm.controls['weight'].errors?.['pattern']" class="alert alert-danger">
+                        Weight should be a positive number
+                    </div>
+                </div>
+                <div>
+                    <label for="dob" class="">Patient Temperature:</label>
+                    <br>
+                    <input formControlName="temperature" placeholder="Enter in Farenhiet" type="text" id="dob" name="dob" required>
+                    <div *ngIf="patientForm.controls['temperature'].invalid && patientForm.controls['temperature'].touched && patientForm.controls['temperature'].errors?.['pattern']" class="alert alert-danger">
+                        Temperature Should be a positive number
+                    </div>
+                </div>
+                <div>
+                    <label for="dob" class="">Patient BP:</label>
+                    <br>
+                    <input formControlName="bp" type="text" id="dob" name="dob" required>
+                    <div *ngIf="patientForm.controls['bp'].invalid && patientForm.controls['bp'].touched && patientForm.controls['bp'].errors?.['pattern']" class="alert alert-danger">
+                        <p>BP should be of form number/ number</p>
+                    </div>
+                </div>
+                <div>
+                    <label for="dob" class="">Follow Up</label>
+                    <br>
+                    <select formControlName="followup" id="cars" name="cars">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div *ngIf="followExist(patientForm.get('followup')!.value)">
+                    <label for="dob" class="" >Follow Up Date</label>
+                    <br>
+                    <input formControlName="followUpDate" type="date" name="date" id="date">
+                </div>
+                <div class="submit">
+                    <button class="btn btn-success add-admin" type="submit">Save Details</button>
+                    <p class="saved" *ngIf="saved">saved</p>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+    <div class="submit">
+        <button class="btn btn-success" type="submit" (click)="getPrescription()" *ngIf="!prev_appointment.isFollow">Download patient previous prescription</button>
+    </div>
+
+    <div class="medicines">
+        <h3>List of Medicines</h3>
+        <div class="medicine" *ngFor="let prescription of prescription_list; index as i">
+            <!-- <p>Medicine Name - {{prescription.medicine_name}}</p>
+            <p>Medicine Power - {{prescription.medicine_power}}</p>
+            <p>Medicine Dosage - {{prescription.medicine_dosage}}</p>
+            <p>Medicine Duration -{{prescription.duration}}</p> -->
+
+            <div class="key-value-list">
+                <div class="key-value-pair">
+                    <div class="key">Medicine Name: &nbsp;</div>
+                    <div class="value">{{prescription.medicine_name}}</div>
+                </div>
+                <div class="key-value-pair">
+                    <div class="key">Medicine Power: &nbsp;</div>
+                    <div class="value">{{prescription.medicine_power}}</div>
+                </div>
+                <div class="key-value-pair">
+                    <div class="key">Medicine Dosage: &nbsp;</div>
+                    <div class="value">{{prescription.medicine_dosage}}</div>
+                </div>
+                <div class="key-value-pair">
+                    <div class="key">Medicine Duration: &nbsp;</div>
+                    <div class="value">{{prescription.duration}}</div>
+                </div>
+            </div>
+
+            <div class="delete" style="margin: auto; padding-right:0%">
+                <button class="btn btn-primary btn-dark add-admin" (click)="delete(i)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="submit">
+        <button class="btn btn-success btn-lg" type="submit" (click)="onSubmit()">Add Prescription</button>
+    </div>
+
+</body>
+</html> 
